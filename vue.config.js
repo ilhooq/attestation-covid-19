@@ -7,7 +7,8 @@ module.exports = {
      args[0].title = 'COVID-19 – Générateur d\'attestation de déplacement dérogatoire'
      return args
    })
- },
+  },
+  publicPath: process.env.NODE_ENV === 'production' ? '/attestation-covid-19/' : '/',
   pwa: {
     name: 'Générateur d\'attestation de déplacement dérogatoire',
     themeColor: '#ced4da',
