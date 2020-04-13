@@ -146,12 +146,14 @@
       </b-form-checkbox-group>
     </b-form-group>
 
-    <b-form-group label="Date de sortie">
-      <b-form-input type="date" id="field-datesortie" v-model="certificate.datesortie" name="datesortie" autocomplete="off" placeholder="JJ/MM/YYYY" aria-invalid="true" required />
-    </b-form-group>
-    <b-form-group label="Heure de sortie">
-      <b-form-input type="time" id="field-heuresortie" v-model="certificate.heuresortie" name="heure" autocomplete="off" aria-invalid="true" required />
-    </b-form-group>
+    <div class="form-row">
+      <b-form-group label="Date de sortie" class="col-md-6">
+        <b-form-input type="date" id="field-datesortie" v-model="certificate.datesortie" name="datesortie" autocomplete="off" placeholder="JJ/MM/YYYY" aria-invalid="true" required />
+      </b-form-group>
+      <b-form-group label="Heure de sortie" class="col-md-6">
+        <b-form-input type="time" id="field-heuresortie" v-model="certificate.heuresortie" name="heure" autocomplete="off" aria-invalid="true" required />
+      </b-form-group>
+    </div>
 
     <p class="text-center my-3">
       <b-button type="button" @click="getCertificate" size="lg" variant="primary">Générer mon attestation</b-button>
