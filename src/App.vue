@@ -3,7 +3,7 @@
     <header role="banner" class="bg-primary">
       <div class="container">
         <b-navbar toggleable="lg" type="dark" variant="primary">
-          <b-navbar-brand class="covid-title" href="/">
+          <b-navbar-brand class="covid-title" to="/">
             COVID-19
           </b-navbar-brand>
           <span class="covid-subtitle">
