@@ -275,11 +275,11 @@ export default {
         address: this.form.address,
         zipcode: this.form.zipcode,
         town: this.form.town,
-        datesortie: this.certificate.datesortie,
+        datesortie: new Date(this.certificate.datesortie).toLocaleDateString('fr-FR'),
         heuresortie: this.certificate.heuresortie
       }
-      generatePdf(profile, this.certificate.motif.join('-')).then(blob => {
 
+      generatePdf(profile, this.certificate.motif.join('-')).then(blob => {
         const creationDate = new Date().toLocaleDateString('fr-CA')
         const creationHour = new Date().toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' }).replace(':', '-')
         const fileName = `attestation-${creationDate}_${creationHour}.pdf`
