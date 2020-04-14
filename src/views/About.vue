@@ -14,7 +14,7 @@
 
     <p>
       Par ailleurs, ce générateur peut être utilisé hors ligne en tant que <a href="https://fr.wikipedia.org/wiki/Progressive_web_app">Progressive Web App</a>.<br />
-      Pour cela, il suffit par exemple d'ajouter l'adresse <a href="https://github.com/ilhooq/attestation-covid-19">https://github.com/ilhooq/attestation-covid-19</a>
+      Pour cela, il suffit par exemple d'ajouter l'adresse <a href="https://ilhooq.github.io/attestation-covid-19/">https://ilhooq.github.io/attestation-covid-19/</a>
       dans les favoris de votre navigateur Web sur votre smartphone. Le générateur pourra ensuite être utilisé hors connexion.
     </p>
 
