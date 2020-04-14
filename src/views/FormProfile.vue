@@ -2,8 +2,12 @@
 <template>
   <form id="form-profile" @submit.stop.prevent="save" accept-charset="utf-8">
 
-    <b-form-select v-model="profile" :options="profileOptions" @change="loadProfile"></b-form-select>
-    <hr />
+    <div v-if="profiles.length">
+      <h2 class="h3 my-3">Charger un profil :</h2>
+      <button type="button" class="btn btn-primary mr-2" @click="loadProfile(null)">Nouveau profil</button>
+      <button type="button" class="btn btn-secondary mr-2" v-for="(item, index) in profiles" :key="index" @click="loadProfile(index)">{{ item.firstname }}</button>
+      <hr />
+    </div>
 
     <h2 class="h3 my-3">Remplissez votre attestation numérique :</h2>
 
@@ -234,6 +238,7 @@ export default {
         this.profile++
       } else {
         profiles[this.profile] = this.form
+        alert('Modifications enregistrées.')
       }
 
       localStorage.setItem('profils', JSON.stringify(profiles))
@@ -241,7 +246,9 @@ export default {
       this.updateProfiles()
     },
 
-    loadProfile: function() {
+    loadProfile: function(index) {
+      this.profile = index
+
       if (this.profile === null) {
         this.clear()
         return
@@ -284,11 +291,12 @@ export default {
         const creationHour = new Date().toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' }).replace(':', '-')
         const fileName = `attestation-${creationDate}_${creationHour}.pdf`
         const link = document.createElement('a')
-        var url = URL.createObjectURL(blob)
-        link.href = url
-        link.download = fileName
+        link.style.display = 'none'
         document.body.appendChild(link)
-        link.click()
+        var url = URL.createObjectURL(blob)
+        link.setAttribute('href', url)
+        link.setAttribute('download', fileName)
+        link.dispatchEvent(new MouseEvent('click'))
       })
     }
   },

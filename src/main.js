@@ -4,7 +4,6 @@ import './registerServiceWorker'
 import router from './router'
 import {
   NavbarPlugin,
-  FormSelectPlugin,
   FormGroupPlugin,
   FormInputPlugin,
   ButtonPlugin,
@@ -16,7 +15,6 @@ import './assets/main.scss'
 Vue.config.productionTip = false
 
 Vue.use(NavbarPlugin)
-Vue.use(FormSelectPlugin)
 Vue.use(FormGroupPlugin)
 Vue.use(FormInputPlugin)
 Vue.use(ButtonPlugin)
